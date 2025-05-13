@@ -5,7 +5,7 @@ This repository contains MATLAB scripts, R scripts, and data files for analyzing
 
 ### Folder Structure and Descriptions:
 
-1. **PKPD driver case/**
+1. **PKPD driver case**
    - Contains MATLAB scripts and data for running the main pharmacokinetic and pharmacodynamic simulations.
    - **Files:**
      - `driver_case.m`: Contains multiple RunCase functions to generate figures and data outputs. The detailed RunCases are as follows:
@@ -20,21 +20,22 @@ This repository contains MATLAB scripts, R scripts, and data files for analyzing
      - `eqns_v2.m`: Setup of ode equations for the Valsartan PK/PD model.
      - `sim0_v2.m`: Main simulation script for running individual patient simulations.
      - `singlepatient_v2.m`: Testing simulation with all compartments plotted.
-     - `bp_exp.csv`: Empirical blood pressure data for untreated patients.
-     - `val_exp.csv`: Empirical free valsartan plasma concentration data.
+     - `singlepatient_v3.m`: Plotting the mass balance for free valsartan and produces **Figure 4**.
+     - `bp_exp.csv`: Clinical blood pressure data for untreated patients.
+     - `val_exp.csv`: Clinical free valsartan plasma concentration data.
 
-2. **PopPK/**
+2. **PopPK**
    - Contains scripts and data for population pharmacokinetics analysis, sensitivity analysis, and data visualization.
    - **Files:**
-     - `poppk.m`: Population pharmacokinetics simulation script.
+     - `poppk.m`: Population pharmacokinetics simulation script and produces **Figure 11**.
      - `eqns_v2.m`: System of equations for the population PK/PD model.
      - `sensitivity_with_output.m`: Takes `valsartan_random_pop_case1_case2.mat` and generates contour and scatter plots shown in **Figure 12**.
-     - `Data_3Dplot.m`: Generates 3D sensitivity analysis plots.
-     - `beeswarm_sensitivity.r`: Generates beeswarm plots for sensitivity analysis.
-     - `valsartan_random_pop_case1_case2.mat`: Dataset for population simulations.
+     - `Data_3Dplot.m`: Generates data (.csv files) for 3D interactive plots.
+     - `beeswarm_sensitivity.r`: Generates beeswarm plots for sensitivity analysis for **Figure 13**.
+     - `valsartan_generate_random_population.m`: Generates dataset for population simulations through mean +/- SD of weight and baseline receptor concentrations.
      - `valsartan_relative_sensitivity.mat`: Dataset for relative sensitivity analysis.
 
-3. **sys_pharm_g10/**
+3. **sys_pharm_g10**
    - Contains the ShinyApp for interactive visualization of missed-dose scenarios and population sensitivity analysis.
    - **Files:**
      - `app.r`: Main R script for building and running the ShinyApp.
@@ -43,8 +44,4 @@ This repository contains MATLAB scripts, R scripts, and data files for analyzing
 1. Ensure that MATLAB and R are installed with necessary toolboxes and libraries.
 2. Navigate to the `PKPD driver case` folder and run `driver_case.m` to generate required data and figures.
 3. Move to the `PopPK` folder to run population pharmacokinetics simulations and sensitivity analysis.
-4. Execute `app.r` in the `sys_pharm_g10` folder to launch the ShinyApp for interactive exploration.
-
-### Contact:
-For further inquiries or issues, please contact Cecelia Zhang.
 
